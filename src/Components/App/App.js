@@ -14,7 +14,13 @@ class App extends Component {
               album: 'Moustache Life',
               id: '1',
     }],
-    playlistTracks : []
+    playlistName : [],
+    playlistTracks : [{
+      name : 'Welcome to Japan',
+      artist: 'The Strokes',
+      album: 'RBA',
+      id: '2',
+    }],
     };
   }
 
@@ -26,7 +32,10 @@ class App extends Component {
           <SearchBar />
           <div className="App-playlist">
           <SearchResults searchResults={this.state.searchResults}/>
-          <Playlist playList= {this.state.playlistTracks}/>
+          <Playlist
+          playlistName={this.state.playlistName}
+          playlistTracks={this.state.platlistTracks}
+          />
           </div>
         </div>
       </div>
