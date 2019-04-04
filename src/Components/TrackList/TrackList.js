@@ -12,9 +12,10 @@ class TrackList extends React.Component {
           track => {
             return (
            <Track key={track.id}/>
-         );}
-        )
+         );
+          })
             }
+
     </div>
   );
   }
