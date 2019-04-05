@@ -22,15 +22,21 @@ class App extends Component {
       id: '2',
     }],
     };
+    this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   addTrack(track) {
-    if (this.state.playlistTracks.find(savedTrack => {
-      (savedTrack.id === track.id) {
+    if (this.state.playlistTracks.find(savedTrack =>
+      savedTrack.id === track.id)) {
         return;
       }
-    })) else {
+  }
 
+  removeTrack(track) {
+    if (this.state.playlistTracks.find(removedTrack =>
+    removedTrack.id === track.id)) {
+        return;
     }
   }
 
@@ -41,10 +47,14 @@ class App extends Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-          <SearchResults searchResults={this.state.searchResults}/>
+          <SearchResults
+          searchResults={this.state.searchResults}
+          onAdd={this.addTrack}
+          />
           <Playlist
           playlistName={this.state.playlistName}
           playlistTracks={this.state.playlistTracks}
+          onRemove={this.state.removeTrack}
           />
           </div>
         </div>

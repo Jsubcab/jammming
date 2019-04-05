@@ -15,6 +15,9 @@ class TrackList extends React.Component {
          );
           })
             }
+            <Track onAdd={this.props.onAdd}
+            isRemoval={this.props.isRemoval}
+            onRemove={this.props.onRemove}/>
 
     </div>
   );
